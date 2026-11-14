@@ -1,0 +1,3 @@
+package com.expensetracker.controller;
+import com.expensetracker.dto.*;import com.expensetracker.service.UserService;import jakarta.validation.Valid;import org.springframework.http.HttpStatus;import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/users") public class UserController {private final UserService s;public UserController(UserService s){this.s=s;}@PostMapping @ResponseStatus(HttpStatus.CREATED) public UserResponseDTO create(@Valid @RequestBody UserRequestDTO r){return s.create(r);}@GetMapping("/{id}") public UserResponseDTO get(@PathVariable Long id){return s.get(id);}@PutMapping("/{id}") public UserResponseDTO update(@PathVariable Long id,@Valid @RequestBody UserRequestDTO r){return s.update(id,r);}}

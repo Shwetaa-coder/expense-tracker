@@ -1,0 +1,18 @@
+
+# Java / Spring Boot
+target/
+*.class
+*.log
+
+# IntelliJ
+.idea/
+*.iml
+
+# Frontend
+node_modules/
+dist/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
